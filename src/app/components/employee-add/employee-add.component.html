@@ -1,0 +1,29 @@
+
+<div class="container">
+  <h3>Employee Registration</h3>
+	<form  [formGroup]="addForm" (ngSubmit)="doRegister()"> 
+
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text" formControlName="first_name" class="form-control" placeholder="first Name">
+    <div class="invalid-feedback-red" *ngIf="addForm.controls.first_name.invalid && (addForm.controls.first_name.dirty || addForm.controls.first_name.touched)">Please enter 3 to 50 characters</div> 
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text" formControlName="last_name" class="form-control" placeholder="last Name">
+    <div class="invalid-feedback-red" *ngIf="addForm.controls.last_name.invalid && (addForm.controls.last_name.dirty || addForm.controls.last_name.touched)">Please enter  3 to 50 characters </div> 
+  </div>
+  <div class="form-group">
+    <label>Department</label>
+    <input type="text" formControlName="department" class="form-control" placeholder="department">
+    <div class="invalid-feedback-red" *ngIf="addForm.controls.department.invalid && (addForm.controls.department.dirty || addForm.controls.department.touched)">Please enter valid department</div> 
+  </div>
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="text" formControlName="phone" class="form-control" placeholder="phone">    
+    <div class="invalid-feedback-red" *ngIf="addForm.controls.phone.invalid && (addForm.controls.phone.dirty || addForm.controls.phone.touched)">Please enter valid phone number</div>   
+  </div>
+		<button class="btn btn-primary" type="submit" [disabled]="!addForm.valid">Submit</button>
+
+	</form>
+</div>

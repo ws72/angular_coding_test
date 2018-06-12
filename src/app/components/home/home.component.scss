@@ -1,0 +1,9 @@
+.home{
+    &__container{
+        display: flex;
+        flex-direction:row;
+    }
+    &__nav-bar{
+        height:  calc(108vh - 4rem);
+    }
+}
